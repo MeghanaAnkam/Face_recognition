@@ -22,7 +22,7 @@ class TrainingDataCollector:
         self.detector = MTCNN()
 
     def collectImagesFromCamera(self):
-        # initialize video stream
+        # initialize video streaming service
         cap = cv2.VideoCapture(0)
 
         # Setup some useful var
@@ -57,7 +57,9 @@ class TrainingDataCollector:
 
                 max_bbox = max_bbox[0:4]
 
+
                 # get each of 3 frames
+                #jnjdc
                 if frames % 3 == 0:
                     # convert to face_preprocess.preprocess input
                     landmarks = np.array([landmarks["left_eye"][0], landmarks["right_eye"][0], landmarks["nose"][0],
